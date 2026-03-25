@@ -1,40 +1,50 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>Unit tests for UI5 Walkthrough</title>
+    <title>OPA5 Integration Tests</title>
     <meta charset="utf-8">
 
-    <!-- UI5 Bootstrap -->
+    ```
     <script
             id="sap-ui-bootstrap"
             src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
             data-sap-ui-resource-roots='{
-            "dev.opa5basics1": "../../"
-        }'
+        "dev.opa5basics1": "../../"
+    }'
             data-sap-ui-async="true">
     </script>
 
-    <!-- QUnit Styles -->
+    <!-- QUnit CSS -->
     <link rel="stylesheet"
           href="https://openui5.hana.ondemand.com/resources/sap/ui/thirdparty/qunit-2.css">
 
-    <!-- QUnit Scripts -->
+    <!-- QUnit -->
     <script src="https://openui5.hana.ondemand.com/resources/sap/ui/thirdparty/qunit-2.js"></script>
+
+    <!-- IMPORTANT: Reporter for Jenkins -->
     <script src="https://openui5.hana.ondemand.com/resources/sap/ui/qunit/qunit-junit.js"></script>
 
-    <!-- Test Bootstrap -->
     <script>
         QUnit.config.autostart = false;
 
         sap.ui.getCore().attachInit(function () {
-            sap.ui.require(
-                ["dev/opa5basics1/test/integration/MyOpaJourney"],
-                function () {
-                    QUnit.start(); // ✅ FIXED: moved inside callback
-                }
-            );
+
+            // Load OPA test FIRST
+            sap.ui.require([
+                "dev/opa5basics1/test/integration/MyOpaJourney"
+            ], function () {
+
+                console.log("OPA Tests Loaded ✅");
+
+                // Start ONLY after loading tests
+                QUnit.start();
+            });
+
         });
     </script>
+    ```
+
 </head>
 
 <body>
