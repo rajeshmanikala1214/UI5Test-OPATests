@@ -1,0 +1,36 @@
+1. create the sample app with one button by clicking the text for that button
+
+2. create folder in webapp folder: test -> integration
+
+3. create file DemoOPATest.html file  to add the bootstrap
+
+   https://sapui5.hana.ondemand.com/#/topic/e1ce1de315994a02bf162f4b3b5a9f09
+
+
+   <!DOCTYPE html>
+   <html>
+   <head>
+   	<title>Unit tests for UI5 Walkthrough</title>
+   	<meta charset="utf-8">
+
+   	<script
+   		id="sap-ui-bootstrap"
+   		src="../../resources/sap-ui-core.js"
+   		data-sap-ui-resource-roots='{
+   			"ui5.walkthrough": "../../"
+   		}'
+   		data-sap-ui-async="true">
+   	</script>
+
+   	<link rel="stylesheet" type="text/css" href="../../resources/sap/ui/thirdparty/qunit-2.css">
+
+   	<script src="../../resources/sap/ui/thirdparty/qunit-2.js"></script>
+   	<script src="../../resources/sap/ui/qunit/qunit-junit.js"></script>
+
+   	<script src="unitTests.qunit.js"></script>
+   </head>
+   <body>
+   	<div id="qunit"/>
+   	<div id="qunit-fixture"/>
+   </body>
+   </html>

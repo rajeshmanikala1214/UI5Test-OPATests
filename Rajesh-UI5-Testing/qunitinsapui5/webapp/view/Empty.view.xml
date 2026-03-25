@@ -1,0 +1,12 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+		  xmlns="sap.m" controllerName="demo.app.controller.Empty">
+    <App>
+        <pages>
+            <Page showHeader="false">
+                <content>
+                    <Text text="Please select a fruit on left" />
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

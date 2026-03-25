@@ -1,0 +1,27 @@
+1. create a new html file in webapp folder: qunitsample.html file
+2. bootstrap qunit:  https://qunitjs.com/
+
+   To get started with QUnit in the browser, create a simple HTML file called test.html and include the following markup:
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.1.css">
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.20.1.js"></script>
+</body>
+
+3. manifest.json file:
+     {
+       "sap.app":{
+          "id":"qunit"
+        }
+     }
+
+4. npm init
+5. ui5 init
+6. ui5 serve
+
+7. add the js file to html file with closed tag

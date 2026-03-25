@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit tests for UI5 Walkthrough</title>
+    <meta charset="utf-8">
+
+    <script
+            id="sap-ui-bootstrap"
+            src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-resource-roots='{
+			"demo.app": "../../"
+		}'
+            data-sap-ui-async="true">
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="https://sapui5.hana.ondemand.com/resources/sap/ui/thirdparty/qunit-2.css">
+
+    <script src="https://sapui5.hana.ondemand.com/resources/sap/ui/thirdparty/qunit-2.js"></script>
+    <script src="https://sapui5.hana.ondemand.com/resources/sap/ui/qunit/qunit-junit.js"></script>
+
+    <script>
+        // stop the test execution until to load the app
+        QUnit.config.autostart = false;
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require(["demo/app/test/unit/unitTests.qunit"], function () {
+                QUnit.start();
+            });
+        });
+    </script>
+<!--    <script src="unitTests.qunit.js"></script>-->
+</head>
+<body>
+<div id="qunit"/>
+<div id="qunit-fixture"/>
+</body>
+</html>

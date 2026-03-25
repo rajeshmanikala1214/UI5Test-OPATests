@@ -1,0 +1,5 @@
+applications:
+- name  : qunitinsapui5
+- buildpacks:
+  - nodejs_buildpack
+- memory: 1G  
